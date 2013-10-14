@@ -2,7 +2,7 @@ date {
 [% FILTER indent -%]
 [%- INCLUDE metaconfig/logstash/filters/basic.tt -%]
 [%  FOREACH d IN desc.date_fields.pairs -%]
-[% d.key %] => "[% d.value %]"
+match => [ "[% d.key %]", "[% d.value %]" ]
 [%  END -%]
 [%-  END -%]
 }
